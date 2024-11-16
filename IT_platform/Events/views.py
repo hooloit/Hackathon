@@ -1,15 +1,30 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from rest_framework.generics import GenericAPIView
+from rest_framework.generics import GenericAPIView, ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.viewsets import ViewSet
 
 from Events.models import Event
 from Events.serializers import EventSerializer
 
 
-# Viewset для таблицы Event
-class EventsAPIViewset(viewsets.ModelViewSet):
+class EventAPIList(ListAPIView):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+
+    def get(self, request):
+        return render(request, "index.html")
+
+class EventAPICreate(CreateAPIView):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+
+class EventAPIUpdate(UpdateAPIView):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+
+class EventAPIDelete(DestroyAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
 
