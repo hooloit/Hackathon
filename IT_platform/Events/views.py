@@ -15,6 +15,14 @@ class EventsAPIViewset(viewsets.ModelViewSet):
 
 
 class Index(GenericAPIView):
+    serializer_class = EventSerializer
     queryset = Event.objects.all()
     def get(self, request):
-        return render(request, 'index.html')
+        index = EventSerializer(self.get_queryset(), many=True)
+        context = {
+            "object_list": index.data,
+        }
+        return render(request, 'index.html', context=context)
+
+# def index(request):
+#     return render(request, 'index.html')
