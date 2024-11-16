@@ -13,30 +13,19 @@
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
             crossorigin="anonymous"
         />
-        <title>Create Event</title>
+        <title>Document</title>
     </head>
     <body>
-        <h1>Страница добвлния мероприятий</h1>
-        {% if data %}
-        <h1>{{ Success_post }}</h1>
-        <a class="btn"></a>
-        {% else %}
         <div class="well tab-content">
-            <div class="tab-pane active" id="post-object-form">
+            <div class="tab-pane active" id="put-object-form">
                 <form
-                    action="/eventcreate/"
-                    method="POST"
+                    action="/eventupdate/0"
+                    data-method="PUT"
                     enctype="multipart/form-data"
                     class="form-horizontal"
                     novalidate=""
                 >
                     <fieldset>
-                        <input
-                            type="hidden"
-                            name="csrfmiddlewaretoken"
-                            value="fHhW6qyvDPjTOIUiNoAseCEWJOhYNKcYPnsEoQ21E3OLxPe2KFC9c6klqqA3jFhl"
-                        />
-
                         <div class="form-group">
                             <label class="col-sm-2 control-label">
                                 Title
@@ -165,19 +154,19 @@
                             <button
                                 class="btn btn-primary js-tooltip"
                                 title=""
-                                data-original-title="Make a POST request on the Event Api Create resource"
+                                data-original-title="Make a PUT request on the Event Api Update resource"
                             >
-                                POST
+                                PUT
                             </button>
                         </div>
                     </fieldset>
                 </form>
             </div>
 
-            <div class="tab-pane" id="post-generic-content-form">
+            <div class="tab-pane" id="put-generic-content-form">
                 <form
-                    action="/eventcreate/"
-                    method="POST"
+                    action="/eventupdate/0"
+                    data-method="PUT"
                     class="form-horizontal"
                 >
                     <fieldset>
@@ -250,15 +239,23 @@
                             <button
                                 class="btn btn-primary js-tooltip"
                                 title=""
-                                data-original-title="Make a POST request on the Event Api Create resource"
+                                data-original-title="Make a PUT request on the Event Api Update resource"
                             >
-                                POST
+                                PUT
+                            </button>
+
+                            <button
+                                data-method="PATCH"
+                                class="btn btn-primary js-tooltip"
+                                title=""
+                                data-original-title="Make a PATCH request on the Event Api Update resource"
+                            >
+                                PATCH
                             </button>
                         </div>
                     </fieldset>
                 </form>
             </div>
         </div>
-        {% endif %}
     </body>
 </html>
