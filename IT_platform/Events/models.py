@@ -1,6 +1,5 @@
 from django.db import models
 from django.db.models import Model
-from typing_extensions import ReadOnly
 
 
 class Event(models.Model):
