@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Events',
-    'Register'
+    'Register',
     'rest_framework',
 ]
 
@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'GMT+5'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 

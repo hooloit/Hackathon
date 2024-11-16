@@ -7,10 +7,10 @@ class Event(models.Model):
     title = models.CharField(max_length=255)
     category = models.CharField(max_length=50)
     special = models.CharField(max_length=100)
-    place = models.CharField()
-    description = models.CharField()
+    place = models.TextField()
+    description = models.TextField()
     date = models.DateField()
-    organizer = models.CharField()
+    organizer = models.CharField(max_length=50)
     image = models.ImageField(upload_to='image/avatar/')
 
     def __str__(self):
