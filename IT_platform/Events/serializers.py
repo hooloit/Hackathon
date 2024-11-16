@@ -6,7 +6,7 @@ class EventSerializer(serializers.ModelSerializer):
         model = Event
         fields = ["title", "category", "special", "place", "description", "date", "organizer", "partners", "image"]
 
-class UserSerializer(serializers.ModelSerializer):
+class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = Profile
         fields = ["username", "name", "second_name", "surname", "birth", "is_organizer", "category", "special", "github", "portfolio", "image"]

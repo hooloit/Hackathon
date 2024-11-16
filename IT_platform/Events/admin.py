@@ -4,4 +4,4 @@ from django.forms import CheckboxSelectMultiple
 
 
 admin.site.register(Event)
-admin.site.register(User)
+admin.site.register(Profile)

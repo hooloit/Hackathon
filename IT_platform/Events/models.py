@@ -1,6 +1,7 @@
 from django.db import models
-from django.db.models import Model
-# from typing_extensions import ReadOnly
+from django.db.migrations import CreateModel
+from django.db.models import Model, CASCADE
+from django.contrib.auth.models import User
 
 
 class Event(models.Model):
@@ -18,8 +19,8 @@ class Event(models.Model):
         return self.title
 
 
-class User(models.Model):
-    username = models.CharField(max_length=100, primary_key=True)
+class Profile(models.Model):
+    username = models.OneToOneField(User, max_length=100, primary_key=True, on_delete=CASCADE)
     name = models.CharField(max_length=80)
     second_name = models.CharField(max_length=80)
     surname = models.CharField(max_length=80)
