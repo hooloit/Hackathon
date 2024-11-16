@@ -4,9 +4,9 @@ from .models import *
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ["__all__"]
+        fields = ["title", "category", "special", "place", "description", "date", "organizer", "partners", "image"]
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ["__all__"]
+        fields = ["username", "name", "second_name", "surname", "birth", "is_organizer", "category", "special", "github", "portfolio", "image"]
