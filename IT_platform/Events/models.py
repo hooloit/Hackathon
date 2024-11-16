@@ -20,7 +20,7 @@ class Event(models.Model):
 
 
 class Profile(models.Model):
-    username = models.OneToOneField(User, max_length=100, primary_key=True, on_delete=CASCADE)
+    username = models.OneToOneField(User, max_length=101, primary_key=True, on_delete=CASCADE)
     name = models.CharField(max_length=80)
     second_name = models.CharField(max_length=80)
     surname = models.CharField(max_length=80)
